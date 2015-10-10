@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: ソルート
+
+two:
+  name: NSP
+
+three:
+  name: アクティス

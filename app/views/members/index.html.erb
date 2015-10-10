@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<h1>マスタリスト</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Password</th>
+      <th>Last name kanji</th>
+      <th>First name kanji</th>
+      <th>Last name kana</th>
+      <th>First name kana</th>
+      <th>Last name romaji</th>
+      <th>First name romaji</th>
+      <th>Deleted flg</th>
+      <th>Partner flg</th>
+      <th>Passport no</th>
+      <th>Email address</th>
+      <th>Global</th>
+      <th>Production terminal room pass</th>
+      <th>Esd email address</th>
+      <th>Esd internet flg</th>
+      <th>Internet flg</th>
+      <th>Email flg</th>
+      <th>Partner company</th>
+      <th>Leader</th>
+      <th>Project name</th>
+      <th>Administrator</th>
+      <th>Work location</th>
+      <th>Reconsignment company name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.password %></td>
+        <td><%= member.last_name_kanji %></td>
+        <td><%= member.first_name_kanji %></td>
+        <td><%= member.last_name_kana %></td>
+        <td><%= member.first_name_kana %></td>
+        <td><%= member.last_name_romaji %></td>
+        <td><%= member.first_name_romaji %></td>
+        <td><%= member.deleted_flg %></td>
+        <td><%= member.partner_flg %></td>
+        <td><%= member.passport_no %></td>
+        <td><%= member.email_address %></td>
+        <td><%= member.global_id %></td>
+        <td><%= member.production_terminal_room_pass %></td>
+        <td><%= member.esd_email_address %></td>
+        <td><%= member.esd_internet_flg %></td>
+        <td><%= member.internet_flg %></td>
+        <td><%= member.email_flg %></td>
+        <td><%= member.partner_company %></td>
+        <td><%= member.leader_id %></td>
+        <td><%= member.project_name %></td>
+        <td><%= member.administrator_id %></td>
+        <td><%= member.work_location %></td>
+        <td><%= member.reconsignment_company_name %></td>
+        <td><%= link_to 'Show', member %></td>
+        <td><%= link_to 'Edit', edit_member_path(member) %></td>
+        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member', new_member_path %>

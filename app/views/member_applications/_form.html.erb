@@ -1,0 +1,112 @@
+<%= form_for(@member_application) do |f| %>
+  <% if @member_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member_application.errors.count, "error") %> prohibited this member_application from being saved:</h2>
+
+      <ul>
+      <% @member_application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </tr>
+  <% end %>
+
+  <%= f.hidden_field :request_type %>
+  <%= f.hidden_field :status %>
+  <%= f.hidden_field :member_id %>
+  <%= f.hidden_field :application_date %>
+  <%= f.hidden_field :applicant %>
+
+  <table>
+    <tbody>
+      <tr>
+        <th><%= f.label :last_name_kanji %><%= f.label :first_name_kanji %></th>
+        <td><%= f.text_field :last_name_kanji, size: 8 %> <%= f.text_field :first_name_kanji, size: 8 %></td>
+      </tr>
+      <tr>
+        <th>(カナ)</th>
+        <td><%= f.text_field :last_name_kana, size: 8 %> <%= f.text_field :first_name_kana, size: 8 %></td>
+      </tr>
+      <tr>
+        <th>(ローマ字)</th>
+        <td><%= f.text_field :last_name_romaji, size: 8 %> <%= f.text_field :first_name_romaji, size: 8 %></td>
+      </tr>
+      <tr>
+        <td colspan=2><hr></td>
+      </tr>
+      <tr>
+        <td colspan=2 align=center>
+          <label>NRI<%= f.radio_button :partner_flg, 'false' %></label>
+          <label>パートナー<%= f.radio_button :partner_flg, 'true' %></label>
+        </td>
+      </tr>
+      <tr>
+        <th><%= f.label :partner_company %></th>
+        <td><%= f.collection_select :partner_company_id, @partner_companies, :id, :name, { include_blank: '- - 選択 - -' } %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :project_name %></th>
+        <td><%= f.text_field :project_name %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :reconsignment_company_name %></th>
+        <td><%= f.text_field :reconsignment_company_name %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :leader %></th>
+        <td><%= f.collection_select :leader_id, @members.partner, :id, :name_kanji, { include_blank: '- - 選択 - -' } %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :administrator %></th>
+        <td><%= f.collection_select :administrator_id, @members.shain, :id, :name_kanji, { include_blank: '- - 選択 - -' } %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :work_location %></th>
+        <td><%= f.text_field :work_location %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :email_flg %></th>
+        <td><%= f.check_box :email_flg %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :internet_flg %></th>
+        <td><%= f.check_box :internet_flg %></td>
+      </tr>
+      <tr>
+        <td colspan=2><hr></td>
+      </tr>
+      <tr>
+        <th><%= f.label :passport_no %></td>
+        <td><%= f.text_field :passport_no %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :email_address %></th>
+        <td><%= f.text_field :email_address %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :global_id %></th>
+        <td><%= f.text_field :global_id %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :esd_email_address %></th>
+        <td><%= f.text_field :esd_email_address %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :to_acknowedger %></th>
+        <td><%= f.text_area :to_acknowedger, :size => "30x3" %></td>
+      </tr>
+      <!--
+      <tr>
+        <th><%= f.label :to_applicant %></th>
+        <td><%= f.text_area :to_applicant, :size => "30x3" %></td>
+      </tr>
+      -->
+    </tbody>
+  </table>
+  <div>
+    <label><%= f.check_box :status, { class: 'draft' }, 'shitagaki', 'shoninmachi' %>下書き保存</label>
+  </div>
+  <div class="actions">
+    <%= f.submit '更新' %>
+  </div>
+<% end %>

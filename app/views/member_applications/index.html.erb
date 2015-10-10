@@ -1,0 +1,57 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h1>異動対応申請一覧</h1>
+
+<div>
+  <%= link_to '新規申請', new_member_application_path %>
+</div>
+
+<br>
+
+<table width=100% border=1>
+  <thead>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :id %></th>
+      <th><%= MemberApplication.human_attribute_name :request_type %></th>
+      <th><%= MemberApplication.human_attribute_name :status %></th>
+      <th>氏名</th>
+      <th>所属</th>
+      <th><%= MemberApplication.human_attribute_name :passport_no %></th>
+      <th><%= MemberApplication.human_attribute_name :email_address %></th>
+      <th><%= MemberApplication.human_attribute_name :email_flg %></th>
+      <th><%= MemberApplication.human_attribute_name :internet_flg %></th>
+      <th><%= MemberApplication.human_attribute_name :global_id %></th>
+      <th><%= MemberApplication.human_attribute_name :applicant %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @member_applications.each do |member_application| %>
+      <tr>
+        <td><%= member_application.id %></td>
+        <td><%= member_application.request_type_i18n %></td>
+        <td><%= member_application.status_i18n %></td>
+        <td>
+          <%= member_application.last_name_kanji %> <%= member_application.first_name_kanji %>
+        </td>
+        <td><%= member_application.partner_flg ? member_application.partner_company.try(:name) : '社員' %></td>
+        <td><%= member_application.passport_no %></td>
+        <td><%= member_application.email_address %></td>
+        <td>
+          <%= member_application.email_flg == true ? '●' : '' %>
+        </td>
+        <td>
+          <%= member_application.internet_flg == true ? '●' : '' %>
+        </td>
+        <td><%= member_application.global_id %></td>
+        <td><%= member_application.applicant.try(:last_name_kanji) %> <%= member_application.applicant.try(:first_name_kanji) %></td>
+        <td><%= link_to '詳細', member_application %></td>
+        <td><%= link_to '修正', edit_member_application_path(member_application) %></td>
+        <% # TODO: 承認待ち　かつ　承認者のみ表示されるようにする %>
+        <td><%= link_to_if member_application.status=='shoninmachi', '承認', acknowledge_member_application_path(member_application) do |name| '' end %></td>
+        <!--<td><%= link_to 'destroy', member_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>

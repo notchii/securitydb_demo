@@ -1,0 +1,61 @@
+ja:
+  activerecord:
+    models:
+      member: メンバー
+      member_application: 異動対応申請
+      partner_company: 協力会社
+      user: ユーザー
+
+    attributes:
+      user:
+        userid: 社員番号
+        email: メールアドレス
+        password: パスワード
+        :password_confirmation: パスワード(確認)
+      member_application:
+        id: ID
+        created_at: 登録日時
+        updated_at: 更新日時
+        request_type: 申請区分
+        status: ステータス
+        # member_id:
+        last_name_kanji: 氏
+        first_name_kanji: 名
+        last_name_kana: 氏(カナ)
+        first_name_kana: 名(カナ)
+        last_name_romaji: 氏(ローマ字)
+        first_name_romaji: 名(ローマ字)
+        partner_flg: 社員/パートナー
+        project_name: プロジェクト
+        partner_company: 協力会社名
+        reconsignment_company_name: 実会社名
+        leader: リーダー
+        administrator: 担当管理者
+        work_location: 常駐先
+        passport_no: 入館証ID
+        email_address: メールアドレス
+        email_flg: ﾒｰﾙ利用
+        internet_flg: ｲﾝﾀｰﾈｯﾄ使用
+        global_id: GlobalID
+        esd_email_address: ESD用メール
+        to_acknowedger: 備考(承認者へ)
+        to_applicant: 備考(申請者へ)
+        application_date: 申請日時
+        applicant: 申請者
+        acknowledge_date: 承認日時
+        acknowledger: 承認者
+  enums:
+    member_application:
+      request_type:
+        shinki: 新規
+        koshin: 更新
+        sakujo: 削除
+      status:
+        shoninmachi: 承認待ち
+        sagyochu: 作業中
+        hishonin: 非承認
+        kanryo: 完了
+        shitagaki: 下書き
+      partner_flg:
+        false: 社員
+        true: パートナー

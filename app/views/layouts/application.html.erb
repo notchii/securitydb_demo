@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Securitydb</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div style="font-size:16px;font-weight:bold;padding:10px;float:left;background-color:#009966;color:#ffffff;">
+    セキュリティ業務システム
+</div>
+
+<div style="padding:10px;float:left;">
+  <%= link_to_unless params[:controller]=='member_applications', '異動対応申請', member_applications_path %>
+</div>
+
+<div style="padding:10px;float:left;">
+  <%= link_to_unless params[:controller]=='members', 'マスタリスト参照', members_path %>
+</div>
+
+<div style="padding:10px;float:right;">
+  ログインユーザ: <%= current_user.try(:userid) %> | <%= link_to 'ログアウト', destroy_user_session_path, :method => :delete %>
+</div>
+
+<div style="clear:both;"><hr></div>
+
+<div style="clear:both;">
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  <%= yield %>
+</div>
+
+</body>
+</html>

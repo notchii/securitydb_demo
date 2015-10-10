@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  password: password
+  last_name_kanji: 天野
+  first_name_kanji: 翔子
+  last_name_kana: アマノ
+  first_name_kana: ショウコ
+  last_name_romaji: Amano
+  first_name_romaji: Shoko
+  existing_flg: true
+  partner_flg: false
+  passport_no: ABCDE
+  email_address: s-amano@nri.co.jp
+  global_id: nri00397
+  production_terminal_room_pass: false
+  esd_email_address:
+  esd_internet_flg: false
+  internet_flg: false
+  email_flg: false
+  partner_company_id:
+  leader_id:
+  project_name:
+  administrator_id:
+  work_location:
+  reconsignment_company_name:
+
+two:
+  password: password
+  last_name_kanji: 桑原
+  first_name_kanji: 理
+  last_name_kana: クワバラ
+  first_name_kana: オサム
+  last_name_romaji: Kuwabara
+  first_name_romaji: Osamu
+  existing_flg: true
+  partner_flg: true
+  passport_no: FGHIJ
+  email_address: slt00017@partner.nri.co.jp
+  global_id: nri00300
+  production_terminal_room_pass: false
+  esd_email_address:
+  esd_internet_flg: false
+  internet_flg: true
+  email_flg: true
+  partner_company_id: 1
+  leader_id: 1
+  project_name: TMR
+  administrator_id: 1
+  work_location: YBP
+  reconsignment_company_name: 

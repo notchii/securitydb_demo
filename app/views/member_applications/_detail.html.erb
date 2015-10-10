@@ -1,0 +1,106 @@
+<table>
+  <tbody>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :request_type %></th>
+      <td><%= @member_application.request_type_i18n %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :status %></th>
+      <td><%= @member_application.status_i18n %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :last_name_kanji %><%= MemberApplication.human_attribute_name :first_name_kanji %></th>
+      <td><%= @member_application.name_kanji %></td>
+    </tr>
+    <tr>
+      <th>(カナ)</th>
+      <td><%= @member_application.name_kana %></td>
+    </tr>
+    <tr>
+      <th>(ローマ字)</th>
+      <td><%= @member_application.name_romaji %></td>
+    </tr>
+    <tr>
+      <td colspan=2><hr></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :partner_flg %></th>
+      <td><%= @member_application.partner_flg %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :partner_company %></th>
+      <td><%= @member_application.partner_company.try(:name) %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :project_name %></th>
+      <td><%= @member_application.project_name %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :reconsignment_company_name %></th>
+      <td><%= @member_application.reconsignment_company_name %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :leader %></th>
+      <td><%= @member_application.leader.try(:name_kanji) %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :administrator %></th>
+      <td><%= @member_application.administrator.try(:name_kanji) %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :work_location %></th>
+      <td><%= @member_application.work_location %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :email_flg %></th>
+      <td><%= @member_application.email_flg %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :internet_flg %></th>
+      <td><%= @member_application.internet_flg %></td>
+    </tr>
+    <tr>
+      <td colspan=2><hr></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :passport_no %></td>
+      <td><%= @member_application.passport_no %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :email_address %></th>
+      <td><%= @member_application.email_address %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :global_id %></th>
+      <td><%= @member_application.global_id %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :esd_email_address %></th>
+      <td><%= @member_application.esd_email_address %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :to_acknowedger %></th>
+      <td><%= @member_application.to_acknowedger %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :to_applicant %></th>
+      <td><%= @member_application.to_applicant %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :applicant %></th>
+      <td><%= @member_application.applicant.try(:name_kanji) %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :application_date %></th>
+      <td><%= @member_application.application_date %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :acknowledger %></th>
+      <td><%= @member_application.acknowledger.try(:name_kanji) %></td>
+    </tr>
+    <tr>
+      <th><%= MemberApplication.human_attribute_name :acknowledge_date %></th>
+      <td><%= @member_application.acknowledge_date %></td>
+    </tr>
+  </tbody>
+</table>

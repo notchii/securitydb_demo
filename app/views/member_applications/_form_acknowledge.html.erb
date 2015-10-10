@@ -1,0 +1,26 @@
+<%= form_for(@member_application) do |f| %>
+  <% if @member_application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member_application.errors.count, "error") %> prohibited this member_application from being saved:</h2>
+
+      <ul>
+      <% @member_application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </tr>
+  <% end %>
+
+  <%= f.hidden_field :status, value: :sagyochu %>
+  <table>
+    <tbody>
+      <tr>
+        <th><%= f.label :to_applicant %></th>
+        <td><%= f.text_area :to_applicant, :size => "30x3" %></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="actions">
+    <%= f.submit '承認' %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module MemberApplicationsHelper
+end

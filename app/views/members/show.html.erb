@@ -1,0 +1,119 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @member.password %>
+</p>
+
+<p>
+  <strong>Last name kanji:</strong>
+  <%= @member.last_name_kanji %>
+</p>
+
+<p>
+  <strong>First name kanji:</strong>
+  <%= @member.first_name_kanji %>
+</p>
+
+<p>
+  <strong>Last name kana:</strong>
+  <%= @member.last_name_kana %>
+</p>
+
+<p>
+  <strong>First name kana:</strong>
+  <%= @member.first_name_kana %>
+</p>
+
+<p>
+  <strong>Last name romaji:</strong>
+  <%= @member.last_name_romaji %>
+</p>
+
+<p>
+  <strong>First name romaji:</strong>
+  <%= @member.first_name_romaji %>
+</p>
+
+<p>
+  <strong>Deleted flg:</strong>
+  <%= @member.deleted_flg %>
+</p>
+
+<p>
+  <strong>Partner flg:</strong>
+  <%= @member.partner_flg %>
+</p>
+
+<p>
+  <strong>Passport no:</strong>
+  <%= @member.passport_no %>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @member.email_address %>
+</p>
+
+<p>
+  <strong>Global:</strong>
+  <%= @member.global_id %>
+</p>
+
+<p>
+  <strong>Production terminal room pass:</strong>
+  <%= @member.production_terminal_room_pass %>
+</p>
+
+<p>
+  <strong>Esd email address:</strong>
+  <%= @member.esd_email_address %>
+</p>
+
+<p>
+  <strong>Esd internet flg:</strong>
+  <%= @member.esd_internet_flg %>
+</p>
+
+<p>
+  <strong>Internet flg:</strong>
+  <%= @member.internet_flg %>
+</p>
+
+<p>
+  <strong>Email flg:</strong>
+  <%= @member.email_flg %>
+</p>
+
+<p>
+  <strong>Partner company:</strong>
+  <%= @member.partner_company %>
+</p>
+
+<p>
+  <strong>Leader:</strong>
+  <%= @member.leader_id %>
+</p>
+
+<p>
+  <strong>Project name:</strong>
+  <%= @member.project_name %>
+</p>
+
+<p>
+  <strong>Administrator:</strong>
+  <%= @member.administrator_id %>
+</p>
+
+<p>
+  <strong>Work location:</strong>
+  <%= @member.work_location %>
+</p>
+
+<p>
+  <strong>Reconsignment company name:</strong>
+  <%= @member.reconsignment_company_name %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
